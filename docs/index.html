@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Redirects</title>
+  <style media="screen">
+    label {
+      display: block;
+    }
+  </style>
+  <script type="text/javascript">
+    function handleClick() {
+      const input = document.getElementById('urlinput')
+      fetch(input.value)
+        .then(response => response.json())
+        .then(json => {
+          document.getElementById('json').innerHTML = JSON.stringify(json, null, 2)
+        })
+        .catch(e => console.log(e))
+    }
+  </script>
 </head>
 <body>
-  hello world
+  <label for="urlinput">url:</label>
+  <input id="urlinput" type="text" >
+  <button type="button" name="button" onclick="handleClick()">click me</button>
+  <pre id="json">{}</pre>
 </body>
 </html>
