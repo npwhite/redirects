@@ -9,6 +9,9 @@
     label {
       display: block;
     }
+    input {
+      width: 300px;
+    }
   </style>
   <script type="text/javascript">
     function handleClick() {
@@ -24,7 +27,7 @@
 </head>
 <body>
   <label for="urlinput">url:</label>
-  <input id="urlinput" type="text" >
+  <input id="urlinput" type="text" value="https://api.chucknorris.io/jokes/random">
   <button type="button" name="button" onclick="handleClick()">click me</button>
   <pre id="json">{}</pre>
 </body>
